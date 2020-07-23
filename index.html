@@ -1,0 +1,85 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 09:35:03
+ * @LastEditTime: 2020-05-29 13:43:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ydz_web\index.html
+ -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    
+    <title>入口页面</title>
+    <style>
+        /* .bar-nav {
+            background-color: #0099FF;
+        }
+        
+        .bar-nav .title {
+            color: #fff;
+        } */
+    </style>
+</head>
+
+<body style="background-color: rgba(0,0,0,0.8);">
+
+<script>
+    apiready = function() {  
+        api.setStatusBarStyle({
+            style: 'light'
+        });
+        api.openFrame({
+            name: 'index',
+            // url: 'dist/html/index.html', //上传打包时使用
+            url:'http://192.168.1.112:8010/html/index.html', //调试时使用// 'http://app.fzyishuang.top/dist/html/index.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            allowEdit:true,
+            bounces: false,
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true,
+            // slidBackEnabled:false
+            
+        }); 
+         var exitType = 0;
+        var time1, time2; 
+        api.addEventListener({
+            name: 'keyback'
+        }, function(ret, err){
+            if (exitType == 0) {
+                time1 = new Date().getTime();
+                exitType = 1;
+                api.toast({msg:'再按一次退出'});
+            } else if (exitType == 1) {
+                time2 = new Date().getTime();
+                if (time2 - time1 < 3000) {
+                    api.closeWidget({
+                        id : api.appId,
+                        retData : {
+                            name : 'closeWidget'
+                        },
+                        silent : true
+                    });
+                } else {
+                    exitType = 0;
+                    api.toast({msg:'再按一次退出'});
+                }
+            }
+
+        });   
+    };
+</script>
+</body>
+
+
+
+</html>

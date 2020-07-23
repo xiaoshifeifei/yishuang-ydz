@@ -1,0 +1,157 @@
+@import "../css/api.css";
+/** 块级元素居中 */
+.block-center{
+    margin:auto;
+}
+/** 行级元素居中 */
+.row-center{
+    text-align: center;
+}
+.high-center{
+    line-height: 100%;
+}
+
+.ui-row{
+    width: 100%;
+    &>div{
+        display: inline-block;
+    }
+    .ui-col-3{
+        width:calc(100% / 4);
+    }
+    .ui-col-4{
+        width:calc(100% / 3);
+    }
+    .ui-col-6{
+        width: calc(100% /2);
+    }
+    .ui-col-12{
+        width: 100%;
+    }
+}
+
+.ui-header-color{
+    background-color: rgb(245,245,245);
+    background-image:linear-gradient(to bottom,#0c5b91 ,#5fafe4);
+}
+.ui-header-white{
+    background-color: white;
+}
+
+
+.ui-input-list{
+    height:3rem;
+    line-height:2.6rem;
+    padding:0.2rem 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    position: relative;
+    .input-name{
+        display: inline-block;
+        height:2.6rem;
+        vertical-align: middle;
+        font-size: 1rem;
+        color:rgba(100,100,100,0.8);
+    }
+    input{
+        display: inline-block;
+        height:2.6rem;
+        line-height: 2.6rem;
+        min-width: 50%;
+        max-width: 70%;
+        vertical-align:middle;
+        font-size: 1rem;
+        padding-left: 0.1rem;
+        color:#4c4c4c;
+    }
+    input::-webkit-input-placeholder {
+        color:rgba(200,200,200,0.8);
+    }
+    .shortiInput{
+        width: 55%;
+    }
+    .el-icon{
+        position: absolute;
+        right:1rem;
+        top:0.8rem;
+        background-color: rgba(100,100,100,0.3);
+        border-radius: 100px;
+        line-height: 1.3rem;
+        color:#7c7c7c;
+        text-align: center;
+        width:1.3rem;
+        height:1.3rem;
+        font-size: 1rem;
+    }
+}
+.el-alert__title {
+    color:red;
+}
+.tips{
+    width: 100%;
+    padding:0.5rem 3%;
+    font-size: 0.8rem;
+    color:rgb(170,170,170);
+    span{
+        font-size: 0.8rem;
+        color:rgb(236, 76, 76);
+    }
+    //background-color: #f5f5f5;
+}
+.ui-red{
+    color:rgb(236, 76, 76);
+}
+.red-tips{
+    width: 100%;
+    padding:0.5rem 3%;
+    font-size: 0.8rem;
+    color:rgb(236, 76, 76);
+}
+.brush-bottom{
+    padding: 0 0 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #2d99e0;
+}
+.el-steps .el-step__icon-inner{
+    color:#6c6c6c;
+}
+.el-button{
+    display: block;
+    border:none;
+    border-radius: 0.5rem;
+    color:white;
+    font-size: 1rem;
+    span{
+          color:white;
+          font-size: 1rem;
+    }
+    width: 90%;
+    margin:0.8rem  auto 0 auto;
+    background-image:linear-gradient(to bottom right,#2d99e0,#6fbaec);
+}
+.good-next{
+    font-size: 0;
+    margin-top: 0.8rem;
+    &>div{
+        height: 3rem;
+        font-size: 0.9rem;
+        text-align: center;
+        button{
+            border-radius: 0.5rem;
+            width:80%;
+            text-align: center;
+            padding:1rem 0;
+            color:white;
+        }
+        .giveup{
+            background-color: rgb(180,180,180);
+        }
+        .accept{
+            background-image:linear-gradient(to bottom right,#2d99e0,#6fbaec);
+        }
+        .accept-wait{
+            background-color: rgb(180,180,180);
+        }
+    }
+}
